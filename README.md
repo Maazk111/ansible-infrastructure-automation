@@ -112,9 +112,8 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 
 ## 🏗️ Architecture & Connection Flow
 
-### **Ansible Connections**
-
-![Ansible Architecture](../ansible_architecture.png)
+### **Ansible Connections & Architecture**
+![Ansible Architecture](./diagram.png)
 
 ---
 
