@@ -114,7 +114,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 
 ### **Ansible Connections**
 
-![Ansible Architecture](ansible_architecture.png)
+![Ansible Architecture](../ansible_architecture.png)
 
 ---
 
