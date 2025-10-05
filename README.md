@@ -1,6 +1,7 @@
 # ⚙️ Ansible Automation — Infrastructure Configuration & Orchestration
 
 ## 📘 Overview
+
 This repository demonstrates my **Ansible expertise** through a complete, hands-on progression — from foundational concepts to cloud-based automation.  
 It showcases how I design, configure, and manage infrastructure declaratively using **Ansible Playbooks**, **roles**, and **modules**, following **real-world DevOps practices**.
 
@@ -15,6 +16,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ## 🧩 Exercises Overview
 
 ### 1️⃣ Introduction to Ansible
+
 - What is Ansible, why it’s agentless, and how it differs from Chef/Puppet.
 - SSH-based control mechanism and ad-hoc commands.
 - **Focus:** Setup and basic understanding of infrastructure automation.
@@ -22,6 +24,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 2️⃣ Setup & Infrastructure
+
 - Installed Ansible on a control node.
 - Created inventory files with host groups (web, db).
 - Verified node connectivity with the **ping module**.
@@ -30,6 +33,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 3️⃣ YAML & JSON
+
 - Learned **YAML syntax** (key-value pairs, lists, dictionaries).
 - Compared YAML vs JSON for configuration.
 - **Focus:** Writing clean, human-readable automation files.
@@ -37,6 +41,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 4️⃣ Ad Hoc Commands
+
 - Used ad hoc commands for one-time tasks.
 - **Examples:**
   ```bash
@@ -48,6 +53,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 5️⃣ Playbooks & Modules
+
 - Created **playbooks** for repeatable tasks.
 - Explored built-in modules: `copy`, `service`, `yum`, `file`, `template`.
 - Learned to troubleshoot and find module documentation.
@@ -56,6 +62,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 6️⃣ Variables & Facts
+
 - Defined variables in inventory, playbooks, and separate var files.
 - Used `debug` module to print variables.
 - Explored facts using `ansible_facts`.
@@ -64,6 +71,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 7️⃣ Decision Making & Loops
+
 - Conditional execution using **when statements**.
 - Iterative tasks using `loop` and `with_items`.
 - **Example:** Installing multiple packages dynamically.
@@ -72,6 +80,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 8️⃣ File, Copy, Template & Handlers
+
 - Managed files, templates, and handlers for notifications.
 - Used **Jinja2 templates** for dynamic file generation.
 - **Focus:** Event-driven automation and configuration templating.
@@ -79,6 +88,7 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 ---
 
 ### 9️⃣ Roles & AWS Automation
+
 - Structured automation using **roles** (tasks, vars, handlers, templates).
 - Implemented automation for **AWS EC2 provisioning** via Ansible.
 - **Focus:** Enterprise-grade modular automation.
@@ -87,23 +97,24 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 
 ## 🧰 Tools & Technologies
 
-| **Category** | **Tools / Services** |
-|---------------|----------------------|
-| **Automation Tool** | Ansible |
-| **Cloud Provider** | AWS |
-| **Scripting Languages** | YAML, Jinja2 |
-| **OS / Platform** | Linux (Ubuntu, CentOS) |
-| **Modules Used** | `ping`, `copy`, `template`, `yum`, `service`, `user`, etc. |
-| **Version Control** | Git & GitHub |
-| **Configuration Management** | ansible.cfg, inventory files |
-| **Orchestration** | Playbooks, Roles, Handlers |
+| **Category**                 | **Tools / Services**                                       |
+| ---------------------------- | ---------------------------------------------------------- |
+| **Automation Tool**          | Ansible                                                    |
+| **Cloud Provider**           | AWS                                                        |
+| **Scripting Languages**      | YAML, Jinja2                                               |
+| **OS / Platform**            | Linux (Ubuntu, CentOS)                                     |
+| **Modules Used**             | `ping`, `copy`, `template`, `yum`, `service`, `user`, etc. |
+| **Version Control**          | Git & GitHub                                               |
+| **Configuration Management** | ansible.cfg, inventory files                               |
+| **Orchestration**            | Playbooks, Roles, Handlers                                 |
 
 ---
 
 ## 🏗️ Architecture & Connection Flow
 
 ### **Ansible Connections**
-![Ansible Architecture](ansible_architecture.png)
+
+![Ansible Architecture](./ansible_architecture.png)
 
 ---
 
@@ -122,23 +133,24 @@ The goal of this repository is to help recruiters and technical reviewers quickl
 
 To replicate this setup, ensure the following AWS infrastructure:
 
-| **Node** | **Purpose** | **AMI** | **Instance Type** | **Security Group Rules** |
-|-----------|--------------|----------|------------------|---------------------------|
-| Control Node | Ansible Master | Ubuntu 22.04 LTS | t2.micro | Port 22 open from My IP |
-| Web01 | Managed Node (Web Server) | CentOS 9 Stream | t2.micro | Port 22 open from Control SG |
-| Web02 | Managed Node (Web Server) | CentOS 9 Stream | t2.micro | Port 22 open from Control SG |
-| DB01 | Managed Node (Database Server) | CentOS 9 Stream | t2.micro | Port 22 open from Control SG |
+| **Node**     | **Purpose**                    | **AMI**          | **Instance Type** | **Security Group Rules**     |
+| ------------ | ------------------------------ | ---------------- | ----------------- | ---------------------------- |
+| Control Node | Ansible Master                 | Ubuntu 22.04 LTS | t2.micro          | Port 22 open from My IP      |
+| Web01        | Managed Node (Web Server)      | CentOS 9 Stream  | t2.micro          | Port 22 open from Control SG |
+| Web02        | Managed Node (Web Server)      | CentOS 9 Stream  | t2.micro          | Port 22 open from Control SG |
+| DB01         | Managed Node (Database Server) | CentOS 9 Stream  | t2.micro          | Port 22 open from Control SG |
 
 **Additional Setup:**
+
 - Create and attach **key pairs** (`control.pem`, `client-key.pem`).
 - Configure SSH access between control and target nodes.
 - Install Ansible only on the control node.
 - Export AWS credentials (`AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`) if automating AWS resources via Ansible modules.
 
-
 ---
 
 ### 🚀 How to Run
+
 ```bash
 # Run ad-hoc command
 ansible all -m ping
